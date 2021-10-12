@@ -18,13 +18,13 @@ class QFocalLoss(nn.Module):
         \\log\\left ( 1-\\sigma  \\right ) + \\alpha \\times y \\log\\left ( \\sigma  \\right ) \\right )
     Where :math:`y` is the label and :math:`\\sigma` is the predicted value after Logits.\n
 
-    :reference
+    :Reference
         https://github.com/ultralytics/yolov5/blob/master/utils/loss.py (line:65)
 
     :Args
-        loss_fcn: nn.BCEWithLogitsLoss object;\n
-        gamma: gamma controls the down-weighting rate smoothly for modulating factor;\n
-        alpha: positive and negative sample balance parameters.
+        - loss_fcn: nn.BCEWithLogitsLoss object;
+        - gamma: gamma controls the down-weighting rate smoothly for modulating factor;
+        - alpha: positive and negative sample balance parameters.
 
     :Shape
     """
@@ -51,3 +51,5 @@ class QFocalLoss(nn.Module):
             return loss.sum()
         else:  # 'none'
             return loss
+
+
