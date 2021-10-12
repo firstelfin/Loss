@@ -9,14 +9,15 @@ import torch.nn as nn
 
 
 class QFocalLoss(nn.Module):
-    """ Quality focal loss
-    Wraps Quality focal loss around existing loss_fcn(),\n
-    i.e. criteria = FocalLoss(nn.BCEWithLogitsLoss(), gamma=1.5)\n
-    \n mathematical formula:\n
+    r""" Quality focal loss
+    Wraps Quality focal loss around existing loss_fcn(),
+    i.e. criteria = FocalLoss(nn.BCEWithLogitsLoss(), gamma=1.5)
+    mathematical formula:
+
     .. math::
-        -\\left | y-\\sigma  \\right |^{\\beta }\\left ( \\left ( 1-\\alpha \\right ) \\left ( 1-y \\right )
-        \\log\\left ( 1-\\sigma  \\right ) + \\alpha \\times y \\log\\left ( \\sigma  \\right ) \\right )
-    Where :math:`y` is the label and :math:`\\sigma` is the predicted value after Logits.\n
+        -\left | y-\sigma  \right |^{\beta }\left ( \left ( 1-\alpha \right ) \left ( 1-y \right )
+        \log\left ( 1-\sigma  \right ) + \alpha \times y \log\left ( \sigma  \right ) \right )
+    Where :math:`y` is the label and :math:`\sigma` is the predicted value after Logits.
 
     :Reference
         https://github.com/ultralytics/yolov5/blob/master/utils/loss.py (line:65)
@@ -53,3 +54,7 @@ class QFocalLoss(nn.Module):
             return loss
 
 
+class DFocalLoss(nn.Module):
+    r"""
+    """
+    pass
